@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Chatbot</title>
+</head>
+<body>
+    <h1>Multilingual Chatbot</h1>
+    <form id="chat-form">
+        <input type="text" id="user-input" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="chat-response"></div>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const chatResponse = document.getElementById('chat-response');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = userInput.value;
+            const response = await fetch('http://127.0.0.1:8000/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: message, source_language: "english" }),
+            });
+            const data = await response.json();
+            chatResponse.innerHTML = `<p><strong>You:</strong> ${message}</p><p><strong>Bot:</strong> ${data.response}</p>`;
+            userInput.value = '';
+        });
+    </script>
+</body>
+</html>
