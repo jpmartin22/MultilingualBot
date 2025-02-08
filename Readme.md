@@ -84,23 +84,6 @@ multilingual-chatbot/
 └── README.md           # Documentation
 ```
 
-## Future Improvements
-
-- Add support for more languages
-- Implement conversation history
-- Enhance response generation with more advanced models
-- Add user authentication
-- Improve error handling and input validation
-- Add CSS styling to web interface
-- Implement websocket support for real-time chat
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 
